@@ -59,8 +59,8 @@
             <p data-aos="fade-up" data-aos-delay="100">
               IMEI Nasional dibuat berdasarkan Basis Data TAC terbesar di seluruh dunia. Fitur Periksa IMEI adalah salah satu alat yang paling berguna dalam industri GSM. Untuk memenuhi harapan Anda, kami menambahkan informasi dan spesifikasi perangkat baru setiap harinya. Fungsi Periksa Pencarian IMEI kami sepenuhnya gratis dan mudah digunakan. Data seperti IMEI dan Nomor Seri adalah kode yang dibuat untuk mengidentifikasi perangkat yang menggunakan jaringan seluler tetapi selain memenuhi fungsi dasar ini, Nomor IMEI memberi kita kesempatan untuk mendapatkan akses ke banyak informasi menarik. Temukan Nomor IMEI Anda dan dapatkan akses ke tanggal garansi, informasi operator, status daftar hitam, tanggal pembelian, dan lainnya. Berikut ini cara cek nomor International Mobile Equipment Identity (IMEI).
             </p>
-            <form action="" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-              <input type="number" max="16" class="form-control" placeholder="" required/>
+            <form action="index.html" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              <input type="number" maxlength="16" class="form-control" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
               <button type="submit" class="btn btn-primary">Search</button>
             </form>
             <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
