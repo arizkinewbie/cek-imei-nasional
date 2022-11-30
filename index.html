@@ -23,6 +23,10 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/sweetalert2/sweetalert2.min.css">
+    
+
   </head>
 
   <body>
@@ -60,9 +64,9 @@
               IMEI Nasional dibuat berdasarkan Basis Data terpecaya. Fitur Periksa IMEI adalah salah satu alat yang paling berguna dalam industri GSM. Untuk memenuhi harapan Anda, kami menambahkan informasi dan spesifikasi perangkat baru setiap harinya. Fungsi Periksa Pencarian IMEI kami sepenuhnya gratis dan mudah digunakan. Data seperti IMEI dan Nomor Seri adalah kode yang dibuat untuk mengidentifikasi perangkat yang menggunakan jaringan seluler tetapi selain memenuhi fungsi dasar ini, Nomor IMEI memberi kita kesempatan untuk mendapatkan akses ke banyak informasi menarik. Temukan Nomor IMEI Anda dan dapatkan akses ke tanggal garansi, informasi operator, status daftar hitam, tanggal pembelian, dan lainnya. Berikut ini cara cek nomor International Mobile Equipment Identity (IMEI).</br></br>
               Setiap ponsel, modem GSM atau perangkat dengan telepon bawaan / modem memiliki nomor IMEI 15 digit yang unik. Berdasarkan nomor ini, Anda dapat memeriksa beberapa informasi tentang perangkat, misalnya merek atau model. Masukkan nomor IMEI di bawah.
             </p>
-            <form action="index.html" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-              <input type="number" maxlength="16" class="form-control" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
-              <button type="submit" class="btn btn-primary">Search</button>
+            <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              <input type="number" placeholder="Masukkan 15 Digit IMEI Anda Disini" id="imei" maxlength="15" class="form-control" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+              <button class="btn btn-primary">Cek</button>
             </form>
             <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
               <div class="col-lg-3 col-6">
@@ -308,5 +312,46 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+  <script src="assets/sweetalert2/sweetalert2.min.js"></script>
+
+
+    <script type="text/javascript">
+      let btn = document.getElementsByTagName('button')[0];
+
+      btn.addEventListener('click', function(){
+        let imei = document.getElementById("imei").value;
+        if(imei == 111111111111111){
+          Swal.fire({
+            title: 'IMEI Anda Terdaftar',
+            html: 'Status IMEI : PERMANEN<br>Terdaftar oleh Kemenperin',
+            icon: 'success'
+        })
+        } 
+       else if(imei == 222222222222222){
+          Swal.fire({
+            title: 'IMEI Anda Terdaftar',
+            html: 'Status IMEI : AKTIF BERJANGKA<br>Terdaftar oleh Beacukai',
+            icon: 'success'
+        })
+        } 
+        else if(imei == 333333333333333){
+          Swal.fire({
+            title: 'IMEI Anda Terblokir',
+            html: 'Status IMEI : TERBLOKIR<br>Silakan Lapor Untuk Pengecekan Lebih Lanjut oleh Petugas Kami ',
+            icon: 'error'
+        })
+        } 
+        else if(imei.length < 15) {
+          Swal.fire({
+            title : 'IMEI Tidak Ditemukan',
+            html :'Pastikan IMEI berjumlah 16 Digit',
+            icon: 'error'
+        })
+        }
+        setTimeout("location.reload(true);",3000);
+        
+});
+    </script>
   </body>
 </html>
