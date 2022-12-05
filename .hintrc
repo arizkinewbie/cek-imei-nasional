@@ -13,7 +13,11 @@
       "default",
       {
         "ignore": [
-          "scroll-behavior"
+          "scroll-behavior",
+          "@-moz-document",
+          "-webkit-tap-highlight-color",
+          "@-moz-document",
+          "@-moz-document"
         ]
       }
     ],
